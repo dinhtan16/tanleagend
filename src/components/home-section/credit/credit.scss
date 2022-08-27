@@ -1,0 +1,30 @@
+@use "../../../sass/" as *;
+
+.credit {
+    height: 100%;
+    overflow: hidden;
+    // z-index: -1;
+    // @include flex(center, center);
+   
+    video {
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+
+    &__content {
+        text-shadow: 0px 3px 14px rgba(51,51,51,0.55);
+       position: absolute;
+       left: 50%;
+       top: 250%;
+       transform: translateX(-50%);
+        text-align: center;
+
+        .btns > * ~ * {
+            margin-left: 1rem;
+        }
+       
+    }
+    
+}

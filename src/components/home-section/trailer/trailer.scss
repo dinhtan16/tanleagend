@@ -1,0 +1,45 @@
+@use '../../../sass/' as* ;
+
+.trailer{
+    
+    &__content{
+        @include flex(flex-start,center);
+
+        &__img,&__info{
+            position: relative;
+            transition: transform .5s ease,opacity .5s ease;
+            opacity: 0;
+            height: 100%;
+        }
+        &__img{    
+            transform: translateX(-200px);
+            width: 50%;
+            position: relative;
+            z-index: 100;
+            img{
+                height: 100%;
+            }
+     
+     
+        }
+
+        &__info{
+            transform: translateX(500px);
+            width: 50%;
+            position: relative;
+            z-index: 100;
+            .video{
+                margin-top: 3rem;
+                width: 90%;
+            }
+        }
+    }
+    &.active &__content &__content__info, &.active &__content &__content__img{
+        transform: translateX(0);
+        opacity: 1;
+        transition-delay: 0.8s;
+    }
+    &.active &__content &__content__img{
+        transition-delay: 1.3s;
+    }
+}

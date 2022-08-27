@@ -1,0 +1,49 @@
+@use '../../../sass/' as * ;
+
+
+
+.welcome{
+    &__content{
+        @include flex(center,center);
+    }
+    
+    &__info,&__img{
+        height: 100%;
+        // width: 100%;
+    }
+    
+    &__info{
+        @include flex(flex-start,flex-end);
+        // width: 80%;
+
+        &__content{
+            padding-left: 9rem;
+            height: 500px;
+
+            .description{
+                font-style: 1rem;
+                width: 90%;  
+            }
+
+            .btns > * ~ *{
+                margin-left: 1rem;
+            }
+            .btns{
+                display: flex;
+                
+            }
+        }
+    }
+    &__img{
+        @include flex(flex-end,flex-start);
+
+        &__slide{
+            // margin-top: -10px;  
+            // margin-bottom: 200px;
+            transform: scale(0.9);
+            height: 630px;
+            width: 715px;
+            overflow: hidden;
+        }
+    }
+}

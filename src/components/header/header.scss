@@ -1,0 +1,68 @@
+@use "../../sass/" as *;
+
+.header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+  padding-left: 5rem;
+  padding-right: 5rem;  
+
+
+  &__inner__container {
+    @include flex(center, space-between);
+    height: 100%;
+  }
+  &__logo {
+    width: 145px;
+    pointer-events: visible;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__nav {
+    @include flex(center, space-between);
+    li {
+      position: relative;
+    }
+    li ~ li {
+      margin-left: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      pointer-events: visible;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 0;
+        background-color: $main-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+      }
+      &::before {
+        left: 0;
+        top: 0;
+        transition-delay: .1s ;
+      }
+      &::after {
+        right: 0;
+        bottom: 0;
+        transition-delay: .2s;
+      }
+    }
+  }
+}

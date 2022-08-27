@@ -1,0 +1,37 @@
+@use '../../sass/' as *;
+
+
+
+.btn{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $text-color;
+    border: 0;
+    
+    outline: 0;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    font-family: $font-family;
+    border-top-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    transition:  .3s ease-in;
+    &:hover{
+        background-color: $text-color;
+        color:$main-color ;
+
+    }
+    &-main{
+        background-color: $main-color;
+    }
+
+    &-second{
+        background-color: $second-color;
+
+        &:hover{
+            background-color: $text-color;
+            color:$second-color ;
+    
+        }
+    }
+
+}
